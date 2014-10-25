@@ -1,0 +1,135 @@
+﻿<!doctype html>
+<html>
+<head>
+<link href="/images/gob.jpg">
+
+<meta charset="utf-8">
+<title>COPRET</title>
+<!--combo-->
+<script>
+	function habilitar(value) 
+	{
+		if(value==true) 
+		{
+			document.getElementById("select").disabled=false;
+		}
+		else if(value==false)
+		{
+			document.getElementById("select").disabled=true;
+		}
+	}	
+</script>
+<!--emergente-->
+<link rel="stylesheet" type="text/css" href="style/estilo.css">
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+<script src="js/mapa.js"></script>
+<script>
+	google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+<script src="js/ajax.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/jquery.bpopup.js"></script>
+<script type="text/javascript">
+    ;(function($) {
+
+         // Cuando la página esté cargada
+        $(function() {
+            // Evento click
+			$('#elemento_a_mostrar').hide();
+            $('#button').on('click', function(e) {
+                // Prevenir la acción por defecto
+                e.preventDefault();
+                // Se lanza el método bPopup 
+                $('#elemento_a_mostrar').bPopup();
+            });
+            $('#click').on('click', function(e) {
+                // Prevenir la acción por defecto
+                e.preventDefault();
+                // Se lanza el método bPopup 
+                $('#elemento_a_mostrar').bPopup();
+            });
+        });
+    })(jQuery);
+ </script>
+ <!--validación de números-->
+ <script>
+    function justNumbers(e)
+    {
+    var keynum = window.event ? window.event.keyCode : e.which;
+    if ((keynum == 8) || (keynum == 46))
+    return true;     
+    return /\d/.test(String.fromCharCode(keynum));
+    }
+</script>
+<!--mapa-->
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<meta charset="utf-8">
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+<script src="js/mapa.js"></script>
+<script>
+	google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+<!--css-->
+<link href="css/estilos.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="cuerpo">
+	<div id="encabezado">
+    	<div id="logo1"><img src="images/gob_logo.png" alt="" width="225"></div>
+    	<div id="nombre">COPRET</div>
+
+	</div>
+	<div id="info">
+    	<div id="edad">
+      		<label for="textfield">Edad:</label>
+      		<input type="text" name="textfield" id="textfield" onkeypress="return justNumbers(event);">
+    	</div>
+    <div id="repitente">
+    	<input name="checkbox" type="checkbox" id="checkbox" onchange="habilitar(this.checked);">
+      Repitente
+      	<label for="select">Grado:</label>
+      	<select name="select" disabled id="select">
+        	<option value="0">Seleccione</option>
+      	</select>
+    </div>
+    <div id="filtrar"><img src="images/search.png" width="36" height="36" alt=""/></div>
+ 	</div>
+	<div id="mapa">
+	
+	<input id = "range" type="range" min="10" max="100" onchange="changeRatio()">
+	<input id="km"  type="text" width="5" readonly="readonly">
+
+    	<input id="but" type="button"  onclick="find(true);" value="">
+		<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+    	<div id="map-canvas">
+        </div>
+        
+			<input id="butMe" type="button"  onclick="findMe()"  value="">
+			<select id="combo"  list=browsers onchange="Cambio();">
+				<option value="1"> Establecimientos Educativos </option>
+				<option value="2"> Hospitales </option>
+				<option value="3"> Gasolineras </option>
+				<!--option value="4"> Municipalidades </option-->
+			</select>
+ 	</div>
+	
+  	<div id="listado">
+		<div id="comparar">
+			<input type="button" name="button" id="button" value="Comparar" onclick="showEstablecimiento();"/>
+			<div id="elemento_a_mostrar">
+				<div id="Emergente">
+					<a href="#" onclick="hideEstablecimiento();">x</a>
+					<div id="EBody"></div>
+				</div>
+			</div>
+		</div>
+	    <div id="list_result"></div>
+	</div>
+	
+	<div id="foot">
+		<div id="list_result"></div>
+    	<div id="derechos">Hackathon 2014 - Transparencia - Libre Acceso a la Informaci&oacuten</div>
+  	</div>
+</div>
+</body>
+</html>

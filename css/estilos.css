@@ -1,0 +1,107 @@
+@charset "utf-8";
+#cuerpo {
+	width: 100%;
+	float: left;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 13pt;
+	font-weight: 300;
+	line-height: 1.75em;
+	height: 400px;
+}
+
+#cuerpo #encabezado {
+	width: 100%;
+	float: left;
+	background-color: #0055AA;
+	color: #FFFFFF;
+	font-size: 13pt;
+	font-weight: 300;
+	line-height: 1.75em;
+}
+
+#cuerpo #encabezado #logo1 {
+	width: 30%;
+	float: left;
+}
+#cuerpo #encabezado #nombre {
+	width: 40%;
+	float: left;
+	font-family: "Roboto Condensed";
+	font-size: xx-large;
+	font-style: inherit;
+	font-weight: 300;
+	text-align: center;
+}
+
+#cuerpo #encabezado #logo2 {
+	width: 30%;
+	float: left;
+	
+}
+
+#cuerpo #info {
+	width: 100%;
+	float: left;
+	display: none;
+}
+#cuerpo #info #edad {
+	width: 35%;
+	float: left;
+}
+#cuerpo #info #repitente {
+	width: 55%;
+	float: left;
+}
+#cuerpo #info #filtrar {
+	width: 10%;
+	float: left;
+}
+#cuerpo #mapa {
+	width: 100%;
+	float: left;
+	height: 400px;
+}
+
+#cuerpo #listado {
+	width: 100%;
+	float: left;
+}
+#cuerpo #listado #comparar {
+	width: 10%;
+	float: right;
+	display: none;
+}
+
+#cuerpo #foot {
+	width: 100%;
+	float: left;
+	background-color: #0055AA;
+	color: #FFFFFF;
+	font-size: 13pt;
+	font-weight: 300;
+	line-height: 1.75em;
+
+}
+#cuerpo #foot #derechos {
+	width: 100%;
+	float: left;
+}
+
+#listado #comparar #elemento_a_mostrar {
+	width: 100%;
+	font-family: "Roboto Condensed";
+}
+
+#map-canvas {
+	width: 100%;
+	float: left;
+	height: 400px;
+	margin: 0px;
+	padding: 0px;
+	z-index: 0;
+}
+
+#combo
+{
+	padding: 5px;
+}
